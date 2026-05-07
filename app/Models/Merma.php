@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Merma extends Model
 {
+    protected $table = 'mermas';
     protected $fillable = [
         'producto_id',
         'sucursal_id',

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TarifaDespacho extends Model
 {
+    protected $table = 'tarifas_despacho';
     protected $fillable = [
         'sucursal_id',
         'comuna_id',

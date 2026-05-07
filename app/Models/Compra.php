@@ -9,6 +9,7 @@ class Compra extends Model
 {
     use HasFactory;
 
+    protected $table = 'compras';
     protected $fillable = [
         'proveedor_id',
         'sucursal_id',

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductoMargen extends Model
 {
+    protected $table = 'producto_margenes';
     protected $fillable = ['producto_id', 'margen_minimo_pct', 'created_by'];
 
     public function producto()

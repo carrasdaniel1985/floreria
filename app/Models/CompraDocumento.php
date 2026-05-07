@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompraDocumento extends Model
 {
+    protected $table = 'compra_documentos';
     protected $fillable = [
         'compra_id',
         'nombre_archivo',

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProductoFoto extends Model
 {
+    protected $table = 'producto_fotos';
     protected $fillable = ['producto_id', 'path', 'es_principal', 'orden'];
 
     protected function casts(): array

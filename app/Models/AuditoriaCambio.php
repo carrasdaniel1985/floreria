@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AuditoriaCambio extends Model
 {
+    protected $table = 'auditoria_cambios';
     protected $fillable = [
         'auditoria_evento_id',
         'campo',
