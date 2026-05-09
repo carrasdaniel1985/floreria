@@ -43,10 +43,13 @@ Route::middleware(['auth'])->group(function () {
 
     // Productos (administrador para CRUD, todos para ver)
     Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
-    Route::get('/productos/{producto}', [ProductoController::class, 'show'])->name('productos.show');
+    // Rutas sin parámetro van ANTES de {producto} para evitar conflictos de routing
     Route::middleware('role:administrador')->group(function () {
         Route::get('/productos/create', [ProductoController::class, 'create'])->name('productos.create');
         Route::post('/productos', [ProductoController::class, 'store'])->name('productos.store');
+    });
+    Route::get('/productos/{producto}', [ProductoController::class, 'show'])->name('productos.show');
+    Route::middleware('role:administrador')->group(function () {
         Route::get('/productos/{producto}/edit', [ProductoController::class, 'edit'])->name('productos.edit');
         Route::put('/productos/{producto}', [ProductoController::class, 'update'])->name('productos.update');
         Route::patch('/productos/{producto}/toggle-activo', [ProductoController::class, 'toggleActivo'])->name('productos.toggle-activo');
